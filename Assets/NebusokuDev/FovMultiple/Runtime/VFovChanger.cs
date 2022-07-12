@@ -4,22 +4,22 @@ namespace NebusokuDev.FovMultiple.Runtime
 {
     public class VFovChanger : MonoBehaviour
     {
-        [SerializeField] private MultipleFovSetter multipleFovSetter;
+        [SerializeField] private MultipleCameraFovSetter multipleCameraFovSetter;
         [SerializeField, Range(0f, 2f)] private float virtualFov = 1f;
         [SerializeField] private float dumpTime = .1f;
 
         private void Update()
         {
-            if (multipleFovSetter.VirtualFov.ContainsKey(this) == false)
+            if (multipleCameraFovSetter.VirtualFov.ContainsKey(this) == false)
             {
-                multipleFovSetter.VirtualFov[this] = virtualFov;
+                multipleCameraFovSetter.VirtualFov[this] = virtualFov;
 
                 return;
             }
 
 
-            multipleFovSetter.VirtualFov[this] =
-                Mathf.Lerp( multipleFovSetter.VirtualFov[this],virtualFov, Time.deltaTime / dumpTime);
+            multipleCameraFovSetter.VirtualFov[this] =
+                Mathf.Lerp( multipleCameraFovSetter.VirtualFov[this],virtualFov, Time.deltaTime / dumpTime);
         }
     }
 }

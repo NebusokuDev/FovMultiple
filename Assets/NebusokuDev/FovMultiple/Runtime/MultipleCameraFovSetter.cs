@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace NebusokuDev.FovMultiple.Runtime
 {
-    public class MultipleFovSetter : MonoBehaviour
+    public class MultipleCameraFovSetter : MonoBehaviour
     {
         [SerializeField, Range(1f, 160f)] private float baseFov = 60f;
 
