@@ -1,7 +1,5 @@
 # FovMultiple - Virtual Field of view multiple setter
 
-このプロジェクトは、
-
 # Usage
 
 1. Attach `Additional Fov Multiple Camera Data`
